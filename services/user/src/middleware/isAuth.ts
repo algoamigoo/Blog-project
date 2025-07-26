@@ -26,7 +26,7 @@ export const isAuth = async (
     const decodeValue = jwt.verify(
       token,
       process.env.JWT_SEC as string
-    ) as JwtPayload;
+    ) as JwtPayload & { user: IUser };
 
     if (!decodeValue || !decodeValue.user) {
       res.status(401).json({

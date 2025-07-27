@@ -5,8 +5,8 @@ import { AppProvider } from "@/context/AppContext";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
-  title: "Blog Project",
-  description: "microservices based blog project",
+  title: "The Reading Retreat",
+  description: "Blogs on various topics",
 };
 
 export default function RootLayout({

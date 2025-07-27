@@ -1,5 +1,4 @@
 "use client";
-
 import React, {
   createContext,
   ReactNode,
@@ -70,6 +69,7 @@ interface AppContextType {
   blogLoading: boolean;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
   searchQuery: string;
+  category: string; // Add this line
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   fetchBlogs: () => Promise<void>;
   savedBlogs: SavedBlogType[] | null;
@@ -162,6 +162,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   useEffect(() => {
     fetchBlogs();
   }, [searchQuery, category]);
+  
   return (
     <AppContext.Provider
       value={{
@@ -174,6 +175,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         logoutUser,
         blogs,
         blogLoading,
+        category, // Add this line
         setCategory,
         setSearchQuery,
         searchQuery,

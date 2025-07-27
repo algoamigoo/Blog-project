@@ -19,13 +19,16 @@ export const blog_service = process.env.NEXT_PUBLIC_BLOG_SERVICE!;
 const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!;
 
 export const blogCategories = [
-  "Techonlogy",
+  "Technology",
+  "Education",
+  "Travel",
+  "Photography",
+  "Lifestyle",
+  "Entertainment",
   "Health",
   "Finance",
-  "Travel",
-  "Education",
-  "Entertainment",
-  "Study",
+  "Poetry",
+  "Story",
 ];
 
 export interface User {
@@ -162,7 +165,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   useEffect(() => {
     fetchBlogs();
   }, [searchQuery, category]);
-  
+
   return (
     <AppContext.Provider
       value={{
